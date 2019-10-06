@@ -1,0 +1,4 @@
+com/guitar/repository/ModelTypePersistenceTests.class
+com/guitar/repository/ManufacturerPersistenceTests.class
+com/guitar/repository/ModelPersistenceTests.class
+com/guitar/repository/LocationPersistenceTests.class

@@ -1,0 +1,5 @@
+com/globomatics/bike/BikeApplication.class
+com/globomatics/bike/controllers/BikesController.class
+com/globomatics/bike/controllers/StockController.class
+com/globomatics/bike/repositories/BikeRepository.class
+com/globomatics/bike/models/Bike.class

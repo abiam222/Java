@@ -1,0 +1,4 @@
+microservices/book/multiplication/controller/MultiplicationResultAttemptControllerTest.class
+microservices/book/multiplication/service/MultiplicationServiceImplTest.class
+microservices/book/multiplication/controller/MultiplicationControllerTest.class
+microservices/book/multiplication/service/RandomGeneratorServiceImplTest.class

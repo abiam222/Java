@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BikeApplication",
+            "request": "launch",
+            "mainClass": "com.globomatics.bike.BikeApplication",
+            "projectName": "bike"
+        }
+    ]
+}

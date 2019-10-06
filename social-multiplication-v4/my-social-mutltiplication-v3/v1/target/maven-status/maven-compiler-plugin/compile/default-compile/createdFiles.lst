@@ -1,0 +1,15 @@
+microservices/book/multiplication/domain/MultiplicationResultAttempt.class
+microservices/book/multiplication/service/AdditionServiceImpl.class
+microservices/book/multiplication/controller/MultiplicationResultAttemptController.class
+microservices/book/multiplication/controller/AdditionController.class
+microservices/book/multiplication/service/RandomGeneratorServiceImpl.class
+microservices/book/multiplication/service/MultiplicationServiceImpl.class
+microservices/book/multiplication/domain/User.class
+microservices/book/multiplication/controller/MultiplicationController.class
+microservices/book/multiplication/domain/Addition.class
+microservices/book/multiplication/domain/Multiplication.class
+microservices/book/multiplication/controller/MultiplicationResultAttemptController$ResultResponse.class
+microservices/book/multiplication/service/MultiplicationService.class
+microservices/book/multiplication/service/AdditionService.class
+microservices/book/multiplication/service/RandomGeneratorService.class
+microservices/book/SocialMultiplicationApplication.class

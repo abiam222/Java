@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication v1</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="multiplication-client.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="mult-client.vue"></script> -->
+</head>
+
+<body>
+<div id="app">
+    <h1>Welcome to Social Multiplication</h1>
+    <h2>This is your challenge for today:</h2>
+    <h1>
+        <!-- <span class="multiplication-a"></span> x <span class="multiplication-b"></span> = -->
+        <span class="multiplication-a">{{ numbers.multA }}</span>x<span class="multiplication-b">{{  numbers.multB }}</span> =
+    </h1>
+    <p>
+        <form id="attempt-form">
+            Result? <input v-model="user.result" type="text" name="result-attempt"><br>
+            Your alias: <input v-model="user.alias" type="text" name="user-alias"><br>
+            <input v-on:click="search" type="submit" value="Check">
+        </form>
+    </p>
+    <h2><span class="result-message">{{ hasResultView }}</span></h2>
+    <h2>Stats</h2>
+    <table id="stats" style="width:100%">
+        <tr>
+            <th>Attempt ID</th>
+            <th>Multiplication</th>
+            <th>You entered</th>
+            <th>Correct?</th>
+        </tr>
+        <tbody id="stats-body" v-for="data in gridData">
+            <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ data.multiplication.factorA }} x {{ data.multiplication.factorB }}</td>
+                <td>{{ data.resultAttempt }}</td>
+                <td>{{  data.correct }}</td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script>
+const app = new Vue({
+        el: "#app",
+        data: {
+            user: {
+                result: null,
+                alias: null
+            },
+            numbers: {
+                multA: null,
+                multB: null
+            },
+            gridData: [],
+            erros: [],
+            hasResultView: null
+        },
+        created() {
+           this.callFactor()
+        },
+        methods: {
+            search: function(e) {
+                e.preventDefault()
+                this.checkAnswer() //check answer
+                this.updateStats() //get alias data
+                this.callFactor() //have to call this again to get new factors
+            },
+            callFactor: function() {
+                axios
+                .get("http://localhost:8080/multiplications/random")
+                .then(response => {
+                    this.numbers.multA = response.data.factorA;
+                    this.numbers.multB = response.data.factorB;
+                })
+            },
+            checkAnswer: function() {
+                const data = { user: { alias: this.user.alias}, multiplication: {factorA: this.numbers.multA, factorB: this.numbers.multB}, resultAttempt: this.user.result};
+                axios
+                .post("/results", JSON.stringify(data), { headers: { "Content-type": "application/json; charset=utf-8" } })
+                .then(response => {
+                    if (response.data.correct) {
+                        this.hasResultView = "The result is correct! Congratulations!"
+                    } else {
+                        this.hasResultView = "Ooops that's not correct! But keep trying!"
+                    }
+                    this.updateStats()
+                    this.user.result = null
+                    this.user.alias = null
+                })
+            },
+            updateStats: function() {
+                axios
+                .get("http://localhost:8080/results?alias=" + this.user.alias)
+                .then(response => {
+                    //im not getting latest
+                    console.log(response.data)
+                    this.gridData = response.data
+                })
+            }
+        }
+    })
+    </script>
+</html>
