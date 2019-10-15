@@ -11,7 +11,7 @@ import java.util.List;
 class Dog {
     //if you write private your ivars can't be accessed 
         int size = 4;
-        String breed;
+        String breed = "me";
         String name = "Dog";
     public  String specific = "Spec";
         String test = new String(); //You can do this becase "String" is an object. So is "Integer"
@@ -71,11 +71,18 @@ class Dog {
 
         System.out.print(myNewList + "\n");
     }
+
+     //Also polymorphism
+     public String giveShot(Dog a) {
+        return a.name;
+        //or function
+    }
 }
 
 class Canine extends Dog {
         int ivar = 4;
         String name = "Canine";
+        //String breed = "you";
 
     // Pet[] i = new Pet[3];
 
