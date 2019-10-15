@@ -64,20 +64,28 @@ class DogTestDrive {
         // System.out.println( d3.specific );
 
         //This is polymorphism
-        Dog d4 = new Canine();
+        //Dog d4 = new Canine();
         
         //Canine. d4 is still calling Canine class first 
-        System.out.println( d4.getName() );
-        d4.bark();
-        System.out.println( d4.name );
+        // System.out.println( d4.getName() );
+        // d4.bark();
+        // System.out.println( d4.name );
         //Dog, get variable from self. Variables aren't inherited
 
         //Also polymorphism
-        Dog d5 = new Dog();
-        Canine d6 = new Canine();
-        //because param is Dog
-        System.out.println( d5.breed );
-        System.out.println( d6.breed );
+        // Dog d5 = new Dog();
+        // Canine d6 = new Canine();
+        // //because param is Dog
+        // System.out.println( d5.breed );
+        // System.out.println( d6.breed );
+
+        //compiler won't let you do this, since Wolf is abstract
+        //Wolf p = new Wolf();
+
+        
+
+
+
 
         // Lab d4 = new Lab();
         // Cat c = new Cat();

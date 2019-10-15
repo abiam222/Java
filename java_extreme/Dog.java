@@ -10,14 +10,14 @@ import java.util.List;
 //memory in ram for "d" to point to Dog object
 class Dog {
     //if you write private your ivars can't be accessed 
-        int size = 4;
-        String breed = "me";
-        String name = "Dog";
+    int size = 4;
+    String breed = "me";
+    String name = "Dog";
     public  String specific = "Spec";
-        String test = new String(); //You can do this becase "String" is an object. So is "Integer"
-        // int[] nums = new int[7];//arr are obects too, in a sense
-        List<Integer> myList = new ArrayList<>();// no size required, though you can
-       // this above perferred over ArrayList on both sides
+    String test = new String(); //You can do this becase "String" is an object. So is "Integer"
+    // int[] nums = new int[7];//arr are obects too, in a sense
+    List<Integer> myList = new ArrayList<>();// no size required, though you can
+    // this above perferred over ArrayList on both sides
  
     private String nonSpecific = "non Spec";
 
@@ -79,6 +79,7 @@ class Dog {
     }
 }
 
+//TECHNICALLY DOG SHOULD EXTEND CANINE BUT YOU GET THE POINT
 class Canine extends Dog {
         int ivar = 4;
         String name = "Canine";
@@ -101,6 +102,13 @@ class Canine extends Dog {
         System.out.println("I have big teeth");
     }
 }
+
+abstract class Wolf extends Dog {
+    public void roam() {
+        
+    }
+}
+
 
 class Lab extends Dog implements Pet {
     int ivar = 7;
@@ -144,6 +152,12 @@ class Lab extends Dog implements Pet {
     @Override
     public String play() {
         return "play with the lab";
+    }
+
+    //This is not an override because the params also has to be the same
+    //and return type. This is just an overload
+    public void myPublicMethod(int me) {
+        //...
     }
 }
 
@@ -221,7 +235,7 @@ class Cat { //if this class is "public" it needs to be in its own file
 
 // whole point of interface is polymorphism
 // another pro of interaces is "type"
-// interface is 100% pure abstract class
+// interface is 100% pure abstract class (aka can't be instantiated)
 // Idc what class inheritance you come from just implement this interface
 interface Pet { // this really says "public"
     public void beFriendly();// this really says public abstract void ...
@@ -231,7 +245,7 @@ interface Pet { // this really says "public"
 
 
 // When you use a 'class' as a polymorphic type, the objects you can stick
-// in that type must be from the same inheritacne tree
+// in that type must be from the same inheritance tree
 // But not just anywhere in the inheritance tree; the object must be
 // from a class that is a subclass of the polymorphic type
 
@@ -245,6 +259,8 @@ interface Pet { // this really says "public"
  * Interview
  * 
  * Abstract vs Concrete classes
+ * 
+ * Abstract class can't instantiate, concrete you can instantiate
  * 
  * What is an abstract method? A method must be overwritten; has no body. If
  * class has abstract method, class must be abstract too. Implementing an
@@ -341,6 +357,7 @@ Create an object from a data type
  An interface is an abstract class
 
  Final - A class that doesn't change. AKA constant. You can obviously create an instance of this.
+ *if you just want a method to be Final (instead of the class) you can do that too
 
 Static - 
 1. Call class no instance (if class is static) But how do you make this?
