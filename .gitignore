@@ -2,6 +2,7 @@ HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -24,3 +25,5 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
+
+*.class
