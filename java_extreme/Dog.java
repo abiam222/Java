@@ -2,37 +2,69 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//There is no such thing as an object variable
+//There are only object reference variables.
+
+//Hence Dog d = new Dog(); this opens a new
+//memory in ram for "d" to point to Dog object
 class Dog {
-    int size;
-    String breed;
-    String name;
-    String test = new String(); //You can do this becase "String" is an object. So is "Integer"
-    // int[] nums = new int[7];//arr are obects too, in a sense
-    List<Integer> myList = new ArrayList<>();// no size required, though you can
-    // this above perferred over ArrayList on both sides
+    //if you write private your ivars can't be accessed 
+        int size = 4;
+        String breed;
+        String name = "Dog";
+    public  String specific = "Spec";
+        String test = new String(); //You can do this becase "String" is an object. So is "Integer"
+        // int[] nums = new int[7];//arr are obects too, in a sense
+        List<Integer> myList = new ArrayList<>();// no size required, though you can
+       // this above perferred over ArrayList on both sides
+ 
+    private String nonSpecific = "non Spec";
 
     // Set<String> names = new HashSet<String>();
     int[] nums = new int[7];
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private void myPrivateMethod() {
+        System.out.println("This is a private method");
+        System.out.println("This is my private var: " + nonSpecific);
+    }
+
+    public void myPublicMethod() {
+        System.out.println("This is a public method");
+        this.myPrivateMethod();
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 
     public void bark() {
         System.out.println("Ruff Ruff!");
     }
 
-    public void add() {
+    public void getNewList() {
         myList.add(3);
         myList.add(8);
         myList.add(133);
         List<Integer> myNewList = new ArrayList<>();
 
-        //System.out.println(test);
-        //System.out.println(breed);
-
-        // You are modyfing and iterating the same which is an issue.
         for (int itr : myList) {
             // System.out.println(itr);
             // int index = itr;
-            itr += 1;
-            System.out.println(itr);
+            itr += 1;//adding one to put in new list
+            //System.out.println(itr);
             // myList.remove(index);
             myNewList.add(itr);
         }
@@ -42,14 +74,24 @@ class Dog {
 }
 
 class Canine extends Dog {
-    int ivar = 4;
+        int ivar = 4;
+        String name = "Canine";
 
     // Pet[] i = new Pet[3];
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
 
     @Override // if overriding the method needs to have the same type
     public void bark() {
         super.bark();//calls the parents class bark method
         System.out.println("I's a canine \n");
+    }
+
+    public void bigTeeth() {
+        System.out.println("I have big teeth");
     }
 }
 
