@@ -80,11 +80,12 @@ class DogTestDrive {
         // System.out.println( d6.breed );
 
         //compiler won't let you do this, since Wolf is abstract
-        //Wolf p = new Wolf();
+        //Wolf w = new Wolf();
+        //Wolfie p = new Wolfie();
+        //p.roam();
 
-        
-
-
+        Lab lab = new Lab();
+        lab.play();
 
 
         // Lab d4 = new Lab();

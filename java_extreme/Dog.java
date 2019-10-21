@@ -105,13 +105,31 @@ class Canine extends Dog {
 
 abstract class Wolf extends Dog {
     public void roam() {
-        
+        //You wouldn't have a body in an abstract
+        //This is just to prove though that if you did you wouldn't
+        //get an error
+        System.out.println("HERE");
     }
+}
+
+class Wolfie extends Wolf {
+
+}
+
+// whole point of interface is polymorphism
+// another pro of interaces is "type"
+// interface is 100% pure abstract class (aka can't be instantiated)
+//And must implement all methods (I mean its an abstract class)
+// Idc what class inheritance you come from just implement this interface
+interface Pet { // this really says "public"
+    public void beFriendly();// this really says public abstract void ...
+
+    public String play();//remember they have no body so that's why we just have ;
 }
 
 
 class Lab extends Dog implements Pet {
-    int ivar = 7;
+    public int ivar = 7;
 
     Pet[] i = new Pet[3];// you can do this because its just an array of 'type' Pet
     // Pet ip = new Pet(); //can't do this because Pet is an interface (aka abstract), ERROR!
@@ -233,17 +251,6 @@ class Cat { //if this class is "public" it needs to be in its own file
     }
 }
 
-// whole point of interface is polymorphism
-// another pro of interaces is "type"
-// interface is 100% pure abstract class (aka can't be instantiated)
-// Idc what class inheritance you come from just implement this interface
-interface Pet { // this really says "public"
-    public void beFriendly();// this really says public abstract void ...
-
-    public String play();
-}
-
-
 // When you use a 'class' as a polymorphic type, the objects you can stick
 // in that type must be from the same inheritance tree
 // But not just anywhere in the inheritance tree; the object must be
@@ -269,6 +276,9 @@ interface Pet { // this really says "public"
  * doesn't have to implement the abstract methods. If the abstract sub-class
  * doesn't implement the parents abstract methods then that sub-class subclass
  * has to (unless of course is abstract).
+ * 
+ * All abstract methods MUST be implemented by the first concrete
+ * subclass down the inheritance tree
  * 
  * 
  * 
@@ -351,10 +361,12 @@ Create an object from a data type
  but there is no point because you don't want a static to do this. You need to read "How to create a static class"
  to make sure an object is not instantiated
 
- Abstract - A class with methods and ivars (can or not have implementation), 
+ Abstract - A class with methods and ivars (can or not have implementation(though many places say it doesn' have a body
+ or shouldn't but if you do then it doesn't cause errors though)), 
  that you want to be inherited, not create an object but extend it. E.g. Object class
  You can't instantiate an object from an abstract class
  An interface is an abstract class
+ Abstract class has no use unless (interface) or its being extended
 
  Final - A class that doesn't change. AKA constant. You can obviously create an instance of this.
  *if you just want a method to be Final (instead of the class) you can do that too
