@@ -24,9 +24,9 @@ class DogTestDrive {
         //when you start pointing objects don't forget
         //to release any pointing references
 
-        Dog d = new Dog();
-        Dog d2 = new Canine();
-        Canine d3 = new Canine();
+        //Dog d = new Dog();
+       // Dog d2 = new Canine();
+        //Canine d3 = new Canine();
 
         //Even array of Dogs is a variable refrencing objects
        // Dog[] pets = new Dog[7];
