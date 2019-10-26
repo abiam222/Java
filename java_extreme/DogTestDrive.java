@@ -70,6 +70,7 @@ class DogTestDrive {
         // System.out.println( d4.getName() );
         // d4.bark();
         // System.out.println( d4.name );
+        //d4.bigTeeth(); //doesn't work
         //Dog, get variable from self. Variables aren't inherited
 
         //Also polymorphism
@@ -84,8 +85,12 @@ class DogTestDrive {
         //Wolfie p = new Wolfie();
         //p.roam();
 
-        Lab lab = new Lab();
-        lab.play();
+
+
+
+        //Lab lab = new Lab();
+        //lab.play();
+       
 
 
         // Lab d4 = new Lab();

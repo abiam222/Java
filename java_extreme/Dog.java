@@ -14,13 +14,12 @@ class Dog {
     String breed = "me";
     String name = "Dog";
     public  String specific = "Spec";
+    private String nonSpecific = "non Spec";
     String test = new String(); //You can do this becase "String" is an object. So is "Integer"
     // int[] nums = new int[7];//arr are obects too, in a sense
     List<Integer> myList = new ArrayList<>();// no size required, though you can
     // this above perferred over ArrayList on both sides
  
-    private String nonSpecific = "non Spec";
-
     // Set<String> names = new HashSet<String>();
     int[] nums = new int[7];
 
@@ -89,7 +88,8 @@ class Canine extends Dog {
 
     @Override
     public String getName() {
-        return this.name;
+       //System.out.println( super.getName() );
+       return this.name;
     }
 
     @Override // if overriding the method needs to have the same type
@@ -108,7 +108,7 @@ abstract class Wolf extends Dog {
         //You wouldn't have a body in an abstract
         //This is just to prove though that if you did you wouldn't
         //get an error
-        System.out.println("HERE");
+        System.out.println("In abstract class Wolf");
     }
 }
 
