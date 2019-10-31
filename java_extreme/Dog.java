@@ -113,7 +113,6 @@ abstract class Wolf extends Dog {
 }
 
 class Wolfie extends Wolf {
-
 }
 
 // whole point of interface is polymorphism
