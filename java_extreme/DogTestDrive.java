@@ -93,7 +93,7 @@ class DogTestDrive {
        
 
 
-        // Lab d4 = new Lab();
+         Lab d4 = new Lab();
         // Cat c = new Cat();
         // Cat c2 = new Cat();
         // Mammal.MammalInner m = new Mammal.MammalInner();
