@@ -194,13 +194,15 @@ class Cat { //if this class is "public" it needs to be in its own file
     
     //List<int> myList = new ArrayList<>();//can't do this, because it needs to be an integer object(int and Integer are different)
     List<Integer> myList = new ArrayList<>();//but you can still put integers in the list
-   // myList[0] = 4;
+    List<Integer> primType = new ArrayList<>();
+    // myList[0] = 4;
    // myList[1] = new Integer();
 
    int[] list = new int[10];//you can add ints to this array
 
     //int primitive
     //Int Object
+    //capitalize the constant (final) variable name
     public static final double PI = 3.14;
 
     
@@ -210,6 +212,12 @@ class Cat { //if this class is "public" it needs to be in its own file
     //the class, so its a great place to initilze a static final
     static {
         x = 42;
+    }
+
+    void primTypeSet() {
+        primType.add(new Integer(5));//this is before java 5
+        //now java wraps the integer for you as an object
+        primType.add(2);
     }
 
     final void intList() {
@@ -350,7 +358,33 @@ A method uses parameters. A caller passes arguments.
 What is a wrapper class?
 Create an object from a data type 
 
+
+Non-Static vs Static
+Java is OO but once in a while you have a special case, 
+typically a utility method (like the Math methods), where
+there is no need to have an instance of the class. The 
+keyword static lets a method run without any instance of the class.
+A static method means behavior not dependent on an instance variable, so no instance/object
+is required. Just the class
+
+You can restrict other code form instantiating a non-abstract
+class by marking the constructor private. Remember, a method marked
+private means that only code from within the class can invoke the method.
+A constructor marked private means essentially the same thing- only code from 
+within the class can invoke the constructor. Nobody can say
+'new' from outdside the class. Thats how it works with the Math class for example.
+s
  
+Static methods can't use non-static ivars.
+The compiler thinks, "idk which objects instance
+variable you're talking about". Because
+static methods run without knowing about any particular instance
+of the static methods class.
+Static mehtods can't use non-static methods either
+Static variables are shared
+All instances of the same class share a single copy of the static variables
+static final variables are constants (Constant variable names should be in all caps)
+
 //////////////////////////////////////////////////////////////////
  
  Static vs Abstract vs Final
