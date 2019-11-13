@@ -218,6 +218,11 @@ class Cat { //if this class is "public" it needs to be in its own file
         primType.add(new Integer(5));//this is before java 5
         //now java wraps the integer for you as an object
         primType.add(2);
+
+        //you can't do 
+        //List<int> primType 
+        //because the rule for generic types is that you can specify only class or interface
+        //types, not primities 
     }
 
     final void intList() {
