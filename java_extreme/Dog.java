@@ -457,3 +457,13 @@ Static variables are shared. All intances of the same class share a single copy 
 
  
  */
+
+ /*
+ If you don't want to catch an exception you can duck it
+ but a function that calls your function (method) has to 
+ try/catch and deal with the exception (assuming that happens)
+
+
+
+
+ */
