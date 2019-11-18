@@ -1,6 +1,7 @@
 import java.io.*;
 
 public class objectState implements Serializable {
+    transient int area; //don't save this in serializable process
     private int width;
     private int height;
     //these values above will be saved
@@ -60,6 +61,18 @@ because the interface doen't have any methods to implement. Its
 sole purpose is to announce that the class implementing it is, well
 serializable. 
 
+Mark an ivar as transient if it can't (or shouldn't )
+be saved
 
+Deserialization: restoring an object
+The whole point of serializing an object is so that you 
+can restore it back to its original state at some later date
+in a different run of the JVM
 
+1) Make a FileInputStream
+2) Make an ObjectInputStream
+3) read the objects
+4) Case the objects
+5) close the objectInputStream
 */
+
