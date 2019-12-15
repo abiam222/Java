@@ -13,3 +13,26 @@ charac as opposed to bytes) => (destination to a file) Aspen /n
 Denver /n Boulder
 
 BufferedWRiter writer = new BufferedWriter(new FileWriter(aFile));
+
+The cool thing about buffers is that they're much more efficient than working
+without them. You acn write to a file using FileWRiter alone, by calling write(someString),
+but FileWriter writes each and every thing you pass to the file each and every time.
+Thats overhead you don't want or need, since every trip to the disk is a Big Deal compared
+to manipulating data in memory. By chaining a BufferedWriter onto a FileWriter, the 
+BufferedWriter will hold all the stuff you write to it until its full. Only when the buffer 
+is full will the FileWriter actually be told to write to the file on disk. 
+
+But if you do want to send data before the buffer is full you do have control. 
+Just flush It. Calls to writer.flush() say, "send whatevers in the buffer, now!"
+
+We can use BufferedReader to make reading more efficient than FileReader
+
+pg476
+Readers and Writers are only for text.
+To write a text file start with FileWriter (Chain FileWriter to a BufferedWriter for efficiency) 
+A File object represent a file at a particular path, not the actual contents of the file. 
+With File object you can create, traverse, and delte directories. 
+To read a text file, start with a FileReader connection stream  (chain BufferedReader for efficiency)
+To parse a text file, you need to be sure the file is written with some way to recognize the diff
+elements. A common approach is to use some kind of character to separte the individual pieces
+Use the String split() to split a String up into individual tokens. 
