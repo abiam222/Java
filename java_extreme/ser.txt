@@ -1,3 +1,7 @@
 if you want to change the object class and behavior of object that is 
 serialized you need to use the serialVersionUID
 pg 479
+
+
+https://stackoverflow.com/questions/765090/serializing-vs-database
+
