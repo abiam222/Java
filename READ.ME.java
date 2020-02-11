@@ -9,8 +9,9 @@ PS Guitar Rest Master - is a Spring Data Rest project
 Java-Getting-Started is a skeleton for Spring Boot Applications via Heroku download 
 
 
-social-multiplication (my code) (this is spring boot mvc 1.5.20)
-is the same as the learn-microservices-boot-master (book)
+microservices-springboot - Practices projects from the "Lear Microservices with Spring Boot" book
+
+performance - Java performance
 
 Java Extreme
 Is java practice problems 
