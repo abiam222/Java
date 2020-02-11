@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: microservices.book.multiplication.controller.MultiplicationControllerTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.526 sec - in microservices.book.multiplication.controller.MultiplicationControllerTest

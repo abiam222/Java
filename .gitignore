@@ -1,7 +1,9 @@
 HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-
+/microservices-springboot/learn-microservices-w-spring-boot-master
+/microservices-springboot/learn-microservices-w-spring-boot-master.zip
+/microservices-springboot/others
 
 ### STS ###
 .apt_generated

@@ -1,5 +1,0 @@
-microservices/book/gamification/service/GameServiceImplTest.class
-microservices/book/gamification/event/EventHandlerTest.class
-microservices/book/gamification/controller/UserStatsControllerTest.class
-microservices/book/gamification/controller/LeaderBoardControllerTest.class
-microservices/book/gamification/service/LeaderBoardServiceImplTest.class

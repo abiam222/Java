@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: microservices.book.gamification.service.GameServiceImplTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.352 sec - in microservices.book.gamification.service.GameServiceImplTest

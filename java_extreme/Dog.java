@@ -306,7 +306,7 @@ class Cat { //if this class is "public" it needs to be in its own file
  * 
  * Object o = new Ferrari(); o.goFast(); //is not legal
  * 
- * Because Java is strongly -typed language, the compiler chekcs to make sure
+ * Because Java is strongly-typed language, the compiler chekcs to make sure
  * that you're calling a method on an objects that's actually capable of
  * responding. You can call a method on an object reference only if the class of
  * the reference type actually has the method.
@@ -340,7 +340,7 @@ class Cat { //if this class is "public" it needs to be in its own file
  * Aggregation expresses an ‘IS A’ relationship. E.g: House is a building.
  * Composition expresses ‘HAS A’ relationship. E.g: House has a bathroom. This is a part of whole relationship where a part cannot exist without the whole.
  * Aggregation is a weaker relationship and composition is stronger.
- * Aggregations are generally achieved by extending a class and composition by implementing interface.
+ * Aggregations are generally achieved by extending a class (inheritance) and composition by implementing interface (interface).
  
 
  /*
