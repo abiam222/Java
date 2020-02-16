@@ -62,4 +62,6 @@ to put them to sleep preidoically. The sleep method throws
 InterruptedExceptino a checked exception all all calls to sleep must
 be wrapped in a try/catch
 
+downside to threads is concrrenct issues
+
 */
