@@ -78,4 +78,24 @@ must be allowed to finish the method before ang other thread can enter
 A thread can enter a synchronized method only if the thread can get the key to the 
 objects lock! The locks are not per method they are per object
 
+^The times I find most often that I need to consider creating threads explicitly are:
+Asynchronous operations
+Operations that can be parallelized
+Continual running background operations
+
+sounds like its a good idead to synchronize everything just to be thread safe?
+Nope. Synchronization doesn't come free. It comes with overhead and performance.
+ANd restricts concurrency (obviously)
+
+Deadlock - be carefl when you use synchronized code. Thread deadlock happens when 
+you have two threads, both of which are holding a key the other thread wants.
+Theres no way out of this scenario, so the two threads will simply sit and wait.
+Java has no mechanism to handle deadlock. Doesn't know deadlock occurred.
+Pay attention to the order in which your threads are started.
+
+Thread priorities might help you influence the scheduler, but they still don't 
+offer any guarantee. 
+
+
+
 */
