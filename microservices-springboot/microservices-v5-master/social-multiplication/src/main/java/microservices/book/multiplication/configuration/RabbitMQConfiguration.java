@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Configures RabbitMQ to use events in our application.
  */
+
+//Spring will use configuration to generate the beans 
 @Configuration
 public class RabbitMQConfiguration {
 
@@ -19,6 +21,7 @@ public class RabbitMQConfiguration {
         return new TopicExchange(exchangeName);
     }
 
+    //override the default RabbitTemplate 
     @Bean
     public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
@@ -26,6 +29,7 @@ public class RabbitMQConfiguration {
         return rabbitTemplate;
     }
 
+    //takes Java objects and serialiezes them to JSON
     @Bean
     public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
         return new Jackson2JsonMessageConverter();
