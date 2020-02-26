@@ -13,6 +13,8 @@ public class SortMountains {
     class HeightCompare implements Comparator<Mountain> {
         public int compare(Mountain one, Mountain two) {
             return one.getHeight().compareTo(two.getHeight());
+            //or instead of using reverse I could do
+            //return two.height - one.height
         }
     }
 

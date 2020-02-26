@@ -13,5 +13,7 @@ microservices-springboot - Practices projects from the "Learn Microservices with
 
 performance - Java performance
 
+dataStructures - Java data structures (comparator, comparable)
+
 Java Extreme
 Is java practice problems 
