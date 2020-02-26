@@ -2,15 +2,28 @@ import java.util.*;
 import java.io.*;
 
 public class Jukebox1 {
-    List<String> songList = new ArrayList<String>();
+    List<Song> songList = new ArrayList<Song>();
 
     public static void main(String[] args) {
         new Jukebox1().go();
     }
 
+    class ArtistCompare implements Comparator<Song> {
+        public int compare(Song one, Song two) {
+            return one.getArtists().compareTo(two.getArtists());
+        }
+    }
+
     public void go() {
         getSongs();
-        System.out.println(songList);
+        System.out.println(songList);//regular list
+        Collections.sort(songList);
+        System.out.println(songList);//list sorted by title
+
+        ArtistCompare artistCompare = new ArtistCompare();
+        Collections.sort(songList, artistCompare);//bc we want two different view
+        //of the song list, one by song title and one by artist
+        System.out.println(songList);//song sorted by artist
     }
 
     void getSongs() {
@@ -21,6 +34,7 @@ public class Jukebox1 {
             while ((line=reader.readLine()) != null) {
                 addSong(line);
             }
+            reader.close();
         } catch(Exception ex) {
             ex.printStackTrace();
         }
@@ -28,7 +42,8 @@ public class Jukebox1 {
 
     void addSong(String lineToParse) {
         String[] tokens = lineToParse.split("/");
-        songList.add(tokens[0]);
+        Song nextSong = new Song(tokens[0],tokens[1],tokens[2],tokens[3]);
+        songList.add(nextSong);
     }
 }
 
