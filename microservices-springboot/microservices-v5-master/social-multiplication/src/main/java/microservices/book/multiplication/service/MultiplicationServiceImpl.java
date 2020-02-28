@@ -66,6 +66,8 @@ class MultiplicationServiceImpl implements MultiplicationService {
         attemptRepository.save(checkedAttempt);
 
         // Communicates the result via Event
+        //why do we need another class. Not just send 
+        //multiplication result attempt
         eventDispatcher.send(
                 new MultiplicationSolvedEvent(checkedAttempt.getId(),
                         checkedAttempt.getUser().getId(),
