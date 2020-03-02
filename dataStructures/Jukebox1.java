@@ -67,7 +67,8 @@ order in which elements were last accessed
 ArrayList is faster than TreeSet because it cost to sort the elements and have them
 in order
 
-
+Now java.nio.file preferred package for files
+-java.io FileXXX streams are deprecated
 
 
 */
