@@ -1,0 +1,5 @@
+microservices/book/multiplication/service/MultiplicationServiceTest.class
+microservices/book/multiplication/service/MultiplicationServiceImplTest.class
+microservices/book/SocialMultiplicationApplicationTests.class
+microservices/book/multiplication/service/RandomGeneratorServiceTest.class
+microservices/book/multiplication/service/RandomGeneratorServiceImplTest.class

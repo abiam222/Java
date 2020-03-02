@@ -1,0 +1,6 @@
+microservices/book/multiplication/service/MultiplicationServiceImpl.class
+microservices/book/multiplication/domain/Multiplication.class
+microservices/book/multiplication/service/MultiplicationService.class
+microservices/book/multiplication/service/RandomGeneratorServiceImpl.class
+microservices/book/multiplication/service/RandomGeneratorService.class
+microservices/book/SocialMultiplicationApplication.class
