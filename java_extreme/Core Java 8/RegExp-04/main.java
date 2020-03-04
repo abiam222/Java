@@ -4,6 +4,8 @@ import java.nio.file.Paths;
 import java.nio.*;
 import java.util.*;
 import java.io.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 class main {
     public static void main(String[] args) {
@@ -37,11 +39,29 @@ class main {
         String s3 = "The average age between each is " + avgDiff + " years";
         String s4 = String.format("The average age between each is %.1f years", avgDiff);
 
-        try {
-            doWrite(david, dawson, dillon, gordon,avgDiff);
-        } catch(Exception e) {
+        // try {
+        //     doWrite(david, dawson, dillon, gordon,avgDiff);
+        // } catch(Exception e) {
 
-        }
+        // }
+
+        //RegExpressions    
+        String s7 = "apple, apple, and orange please";
+
+        String[] parts = s7.split("\\b");
+
+        // for (String thePart: parts) 
+        //     if (thePart.matches("\\w+"))
+        //         System.out.println(thePart);
+
+        //or using Pattern and Matcher
+        Pattern pattern = Pattern.compile("\\w+");
+        Matcher matcher = pattern.matcher(s7);
+
+        System.out.println(pattern);
+        System.out.println(matcher);
+
+        while (matcher.find()) System.out.println(matcher.group());
 
     }
 
