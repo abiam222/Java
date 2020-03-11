@@ -49,28 +49,57 @@ class Adder {
         //     //before finishing background jobs
         // }
 
-            
+        //But 
         //what if we have thousands of files, we can use a thread pool
-        String[] inFiles = {"./file1.txt", ... "./fil6.txt"}
-        String[] outFiles = {"./file1.out.txt", ... "./fil6.out.txt"}
+    //     String[] inFiles = {"./file1.txt", ... "./fil6.txt"}
+    //     String[] outFiles = {"./file1.out.txt", ... "./fil6.out.txt"}
 
-        //the 3 - won't run more than 3 threads at a time
-        ExecutorService es = Executors.newFixedThreadPool(3);
+    //     //the 3 - won't run more than 3 threads at a time
+    //     ExecutorService es = Executors.newFixedThreadPool(3);
 
-        for(i<inFiles.length) {
-            Adder adder = new Adder(inFiles[i], outFiles[i])
-            es.submit(adder);//submit in thread pool
-        }
+    //     for(i<inFiles.length) {
+    //         Adder adder = new Adder(inFiles[i], outFiles[i])
+    //         es.submit(adder);//submit in thread pool
+    //     }
        
-       try  {
-        es.shutdown();//finish the rest of the work. No more new work'
-        //if we want we can wait for the shutdown
-        es.awaitTermination(60, TimeUnit.SECONDS)
-       } catch(Exception e) {...}
+    //    try  {
+    //     es.shutdown();//finish the rest of the work. No more new work'
+    //     //if we want we can wait for the shutdown
+    //     es.awaitTermination(60, TimeUnit.SECONDS)
+    //    } catch(Exception e) {...}
         
        //For this example the process will end up adding (possibly) all threads in the queue
        //but only 3 will run at the same time. Once one of the threads is done opening the file
        //the next thread in line will open the next file and etc
+
+
+        //Multithreaing isn't usally loosely coupled
+        //caller may need result from worker. or if is want to know if thread has succedded
+        //we manally do this, but java makes it easier for us
+
+        //We can have threading relationship types
+        //Callable and Future interface
+
+        /*
+        Callable interface 
+        -represents a stask to be run on a thread
+            -can return restults
+            -can throw exceptions
+        -Only member is the call method
+
+        Future interface
+        -Represents results a thread task
+        -Return by ExecutorService.submit
+        -The key method is get
+        -Blocks until task completes
+        -Returns Callable interface results
+
+        So instead of calling Runnable we can use Callable or Future
+
+        */
+
+
+
     }
 
 }
