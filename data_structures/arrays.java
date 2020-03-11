@@ -21,11 +21,16 @@ class arrays {
 
     public static void main(String[] args) {
         //forEach, for of, for(;;)
-        new arrays().algo();//algo can only be called by an instance
+        //new arrays().arrs();//algo can only be called by an instance
         //hence an instance of this class
+        
+        arrays myObj = new arrays();
+        //myObj.arrs();
+        //myObj.strings();
+        myObj.maths();
     }
 
-    public void algo() {
+    public void arrs() {
         val[0] = 5;
         val8[0] =  6;
         val2[0] = 20;
@@ -47,29 +52,53 @@ class arrays {
         Integer[] both = Stream.concat(Arrays.stream(val2), Arrays.stream(val9)).toArray(Integer[]::new);
 
         for (Integer x:both) {
-            System.out.println(x + " ");
+            //System.out.println(x + " ");
         }
 
         for (int i=0;i<val4.length;i++) {
-            System.out.print(val4[i] + " ");
+            //System.out.print(val4[i] + " ");
         }
-        System.out.println();
+        //System.out.println();
 
         for (int i=0;i<val6.size();i++) {
-            System.out.print(val6.get(i) + " ");
+            //System.out.print(val6.get(i) + " ");
         }
         
         val3.addAll(val6);
-        //Stream.of(val6, val7).forEach(val6::addAll);
+        //Stream.of(val3, val7).forEach(val3::addAll);
 
-        System.out.println();
-        val3.forEach(x -> System.out.print(x + " "));
+        //System.out.println();
+        //val3.forEach(x -> System.out.print(x + " "));
 
-        System.out.println();
+        //System.out.println();
         for (int x: val3) {
-            System.out.print(x + " ");
+            //System.out.print(x + " ");
         }
 
+        val3.forEach(x -> System.out.print(x + " "));
+        System.out.println();
+
+        Collections.sort(val3);
+        val3.forEach(x -> System.out.print(x + " "));
+        System.out.println();
+
+        Collections.reverse(val3);
+        val3.forEach(x -> System.out.print(x + " "));
+        System.out.println();
+    }
+
+    public void strings() {
+        String str = new String("Welcome to Tutorialspoint.com");
+        System.out.println(str.toUpperCase() );
+        System.out.println(str.toLowerCase() );
+    }
+
+    public void maths() {
+        int val = 5;
+        System.out.println(val);
+        System.out.println(val/2);//rounds down
+        System.out.println(Math.ceil(val/2));//down with decimal
+        System.out.println((int)Math.ceil(val/2));//down with decimal
     }
 
 }
