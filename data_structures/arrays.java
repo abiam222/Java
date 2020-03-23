@@ -64,6 +64,7 @@ class arrays {
             //System.out.print(val6.get(i) + " ");
         }
         
+        //merge two list together
         val3.addAll(val6);
         //Stream.of(val3, val7).forEach(val3::addAll);
 
