@@ -68,7 +68,7 @@ class Dog {
             myNewList.add(itr);
         }
 
-        System.out.print(myNewList + "\n");
+        //System.out.print(myNewList + "\n");
     }
 
      //Also polymorphism
@@ -78,15 +78,15 @@ class Dog {
     }
 }
 
-//TECHNICALLY DOG SHOULD EXTEND CANINE BUT YOU GET THE POINT
+//TECHNICALLY DOG SHOULD EXTEND CANINE BUT YOU GET THE POINT (dog is a canine)
 class Canine extends Dog {
         int ivar = 4;
         String name = "Canine";
-        //String breed = "you";
+       // String breed = "you";
 
     // Pet[] i = new Pet[3];
 
-    @Override
+  //  @Override
     public String getName() {
        //System.out.println( super.getName() );
        return this.name;
@@ -108,11 +108,16 @@ abstract class Wolf extends Dog {
         //You wouldn't have a body in an abstract
         //This is just to prove though that if you did you wouldn't
         //get an error
-        System.out.println("In abstract class Wolf");
+        //System.out.println("In abstract class Wolf");
     }
 }
 
 class Wolfie extends Wolf {
+    // @Override 
+    // public void roam() {
+    //     System.out.println("hey");
+    // }
+
 }
 
 // whole point of interface is polymorphism
@@ -125,6 +130,16 @@ interface Pet { // this really says "public"
 
     public String play();//remember they have no body so that's why we just have ;
 }
+
+/*
+
+The short answer: An abstract class allows you to create functionality that 
+subclasses can implement or override. 
+An interface only allows you to define functionality, not implement it. 
+And whereas a class can extend only one abstract class, it can take advantage of 
+multiple interfaces
+
+*/
 
 
 class Lab extends Dog implements Pet {
@@ -154,7 +169,7 @@ class Lab extends Dog implements Pet {
         i[0] = new Lab();
         Dog d = new Lab();
         System.out.println(i[0].getClass());
-        System.out.println(i[0].play());
+        System.out.println(i[0].play());//works because type Pet has play needs in both
         // doesn't work because i[0] is type Pet and the interface doesn't have 'drink'
         // System.out.println(i[0].drink());
         d.bark();
@@ -178,6 +193,7 @@ class Lab extends Dog implements Pet {
     }
 }
 
+//Static class like Math or something like taht
 class Mammal { //you can't have static here 
  
   static class MammalInner { //you can only do this 
@@ -187,7 +203,7 @@ class Mammal { //you can't have static here
   }
 }
 
-class Cat { //if this class is "public" it needs to be in its own file
+class Cat { //if this class is "public" it needs to be in its own file (idk why it works now, maybe old java)
 
     public static int amtCats = 0;//only 1 to the class
     private int size;
@@ -270,7 +286,7 @@ class Cat { //if this class is "public" it needs to be in its own file
 
 // But when you use an interface as a polymorphic type, the objects can be
 // from anywhere in the inheritacen tree. The only requirement is that the obect
-// are from a class that implements the intrecae.
+// are from a class that implements the interface.
 
 // A class can implement multiple interfaces
 
@@ -397,7 +413,7 @@ static final variables are constants (Constant variable names should be in all c
  Static - A class that also have methods and ivars (implementation) but you want it to pertain
  to the class. Not create an object but call the class directly. *You can instantiate a static class
  but there is no point because you don't want a static to do this. You need to read "How to create a static class"
- to make sure an object is not instantiated
+ to make sure an object is not instantiated. To eliminate instantiating a static class make the constructor private. 
 
  Abstract - A class with methods and ivars (can or not have implementation(though many places say it doesn' have a body
  or shouldn't but if you do then it doesn't cause errors though)), 
